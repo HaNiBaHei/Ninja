@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "mainMenu.h"
+#include "Animation.h"
+#include "Player.h"
 
 int main()
 {
@@ -8,8 +10,21 @@ int main()
    
     mainMenu text(window.getSize().x, window.getSize().y);
 
+   
+    sf::Texture playerTexture;
+    playerTexture.loadFromFile("player/runleft.png");
+   
+
+    Player player(&playerTexture, sf::Vector2u(4, 3), 0.2f, 100.0f);
+
+    float deltaTime = 0.0f;
+    sf::Clock clock;
+
+
     while (window.isOpen())
     {
+        deltaTime = clock.restart().asSeconds();
+
         sf::Event evnt;
         while (window.pollEvent(evnt))
         {
@@ -18,6 +33,7 @@ int main()
             case sf::Event::KeyReleased:
                 switch (evnt.key.code)
                 {
+               
                 case sf::Keyboard::Up:
                     text.MoveUp();
                     break;
@@ -25,6 +41,7 @@ int main()
                 case sf::Keyboard::Down:
                     text.MoveDown();
                     break;
+
                 }
                 
                 break;
@@ -34,11 +51,15 @@ int main()
                 window.close();
             }
         }
+        
+        
+        player.Update(deltaTime);
+        
 
         window.clear();
 
-        text.draw(window);
-
+        /*text.draw(window);*/
+        player.Draw(window);
         window.display();
     }
 
