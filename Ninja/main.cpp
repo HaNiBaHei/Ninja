@@ -58,7 +58,7 @@ int main()
 
         window.clear();
 
-        /*text.draw(window);*/
+        text.draw(window);
         player.Draw(window);
         window.display();
     }
