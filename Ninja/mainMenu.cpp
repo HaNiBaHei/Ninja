@@ -20,7 +20,7 @@ mainMenu::mainMenu(float width, float height)
 	text[2].setFont(font);
 	text[2].setFillColor(sf::Color::Blue);
 	text[2].setString("Exit");
-	text[2].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEM +5 ) * 7));
+	text[2].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEM +5 ) * 6));
 }
 
 mainMenu::~mainMenu()
