@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#define MAX_NUMBER_OF_ITEM 4
+#define MAX_NUMBER_OF_ITEM 3
 
 class mainMenu
 {
