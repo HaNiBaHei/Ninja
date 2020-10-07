@@ -12,7 +12,7 @@ int main()
 
    
     sf::Texture playerTexture;
-    playerTexture.loadFromFile("player/runright.png");
+    playerTexture.loadFromFile("player/runrightv2.png");
    
 
     Player player(&playerTexture, sf::Vector2u(4, 3), 0.2f, 100.0f);
