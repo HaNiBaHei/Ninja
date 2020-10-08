@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "mainMenu.h"
+
 #include "Animation.h"
 #include "Player.h"
 
@@ -8,14 +8,14 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(1280, 720), "Bloody Sword", sf::Style::Close | sf::Style::Default);
    
-    mainMenu text(window.getSize().x, window.getSize().y);
+    
 
    
     sf::Texture playerTexture;
-    playerTexture.loadFromFile("player/runrightv2.png");
+    playerTexture.loadFromFile("player/move.png");
    
 
-    Player player(&playerTexture, sf::Vector2u(4, 3), 0.2f, 100.0f);
+    Player player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 250.0f);
 
     float deltaTime = 0.0f;
     sf::Clock clock;
@@ -30,19 +30,7 @@ int main()
         {
             switch (evnt.type)
             {
-            case sf::Event::KeyReleased:
-                switch (evnt.key.code)
-                {
-               
-                case sf::Keyboard::Up:
-                    text.MoveUp();
-                    break;
-
-                case sf::Keyboard::Down:
-                    text.MoveDown();
-                    break;
-
-                }
+            
                 
                 break;
             }
@@ -58,7 +46,7 @@ int main()
 
         window.clear();
 
-        text.draw(window);
+        
         player.Draw(window);
         window.display();
     }
